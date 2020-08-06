@@ -1,121 +1,219 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
-  <head>
-    {{!-- Document Settings --}}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    {{!-- Base Meta --}}
-    <title>{{meta_title}}</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  {{!-- Document Settings --}}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    {{!-- Preload assets --}}
-    <link rel="preload" href="{{asset "css/app.css"}}" as="style" />
-    <link rel="preload" href="{{asset "js/manifest.js"}}" as="script" />
-    <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
-    <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
-    <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
-    <link rel="preconnect" href="https://polyfill.io">
-    <link rel="dns-prefetch" href="https://polyfill.io">
+  {{!-- Base Meta --}}
+  <title>{{meta_title}}</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- This #block helper will try to preload page-specific assets --}}
-    {{{block "preload"}}}
+  {{!-- Preload assets --}}
+  <link rel="preload" href="{{asset "css/app.css"}}" as="style" />
+  <link rel="preload" href="{{asset "js/manifest.js"}}" as="script" />
+  <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
+  <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
+  <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
+  <link rel="preconnect" href="https://polyfill.io">
+  <link rel="dns-prefetch" href="https://polyfill.io">
 
-    {{!-- Styles & Scripts --}}
-    <style>
-      /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
+  {{!-- This #block helper will try to preload page-specific assets --}}
+  {{{block "preload"}}}
 
-      /* source-sans-pro-regular */
-      @font-face {
-        font-family: 'Source Sans Pro';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
-            url("{{asset 'fonts/source-sans-pro/source-sans-pro-regular.woff2'}}") format('woff2'),
-            url("{{asset 'fonts/source-sans-pro/source-sans-pro-regular.woff'}}") format('woff');
-      }
+  {{!-- Styles & Scripts --}}
+  <style>
+    /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
 
-      /* source-sans-pro-600 */
-      @font-face {
-        font-family: 'Source Sans Pro';
-        font-style: normal;
-        font-weight: 600;
-        font-display: swap;
-        src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
-            url("{{asset 'fonts/source-sans-pro/source-sans-pro-600.woff2'}}") format('woff2'),
-            url("{{asset 'fonts/source-sans-pro/source-sans-pro-600.woff'}}") format('woff');
-      }
+    /* source-sans-pro-regular */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Source Sans Pro Regular'),
+      local('SourceSansPro-Regular'),
+      url("{{asset 'fonts/source-sans-pro/source-sans-pro-regular.woff2'}}") format('woff2'),
+      url("{{asset 'fonts/source-sans-pro/source-sans-pro-regular.woff'}}") format('woff');
+    }
 
-      /* source-sans-pro-700 */
-      @font-face {
-        font-family: 'Source Sans Pro';
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
-            url("{{asset 'fonts/source-sans-pro/source-sans-pro-700.woff2'}}") format('woff2'),
-            url("{{asset 'fonts/source-sans-pro/source-sans-pro-700.woff'}}") format('woff');
-      }
+    /* source-sans-pro-600 */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: local('Source Sans Pro SemiBold'),
+      local('SourceSansPro-SemiBold'),
+      url("{{asset 'fonts/source-sans-pro/source-sans-pro-600.woff2'}}") format('woff2'),
+      url("{{asset 'fonts/source-sans-pro/source-sans-pro-600.woff'}}") format('woff');
+    }
 
-      /* iconmoon */
-      @font-face {
-        font-family: 'icomoon';
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-        src: url("{{asset 'fonts/icomoon/icomoon.eot?aoz2mo'}}");
-        src: url("{{asset 'fonts/icomoon/icomoon.eot?aoz2mo#iefix'}}") format('embedded-opentype'),
-        url("{{asset 'fonts/icomoon/icomoon.ttf?aoz2mo'}}") format('truetype'),
-        url("{{asset 'fonts/icomoon/icomoon.woff?aoz2mo'}}") format('woff'),
-        url("{{asset 'fonts/icomoon/icomoon.svg?aoz2mo#icomoon'}}") format('svg');
-      }
-    </style>
+    /* source-sans-pro-700 */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local('Source Sans Pro Bold'),
+      local('SourceSansPro-Bold'),
+      url("{{asset 'fonts/source-sans-pro/source-sans-pro-700.woff2'}}") format('woff2'),
+      url("{{asset 'fonts/source-sans-pro/source-sans-pro-700.woff'}}") format('woff');
+    }
 
-    <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
+    /* iconmoon */
+    @font-face {
+      font-family: 'icomoon';
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+      src: url("{{asset 'fonts/icomoon/icomoon.eot?aoz2mo'}}");
+      src: url("{{asset 'fonts/icomoon/icomoon.eot?aoz2mo#iefix'}}") format('embedded-opentype'),
+      url("{{asset 'fonts/icomoon/icomoon.ttf?aoz2mo'}}") format('truetype'),
+      url("{{asset 'fonts/icomoon/icomoon.woff?aoz2mo'}}") format('woff'),
+      url("{{asset 'fonts/icomoon/icomoon.svg?aoz2mo#icomoon'}}") format('svg');
+    }
+  </style>
 
-    {{!-- This #block helper will inject a stylesheet for a specific page --}}
-    {{{block "styles"}}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
 
-    {{!-- This #block helper will pull data from the hero partial 
-    to inject styles of the hero image to make it responsive --}}
-    {{{block "herobackground"}}}
+  {{!-- This #block helper will inject a stylesheet for a specific page --}}
+  {{{block "styles"}}}
 
-    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
-    {{ghost_head}}
+  {{!-- This #block helper will pull data from the hero partial 
+ the hero image to make it responsive --}}
+  {{{block "herobackground"}}}
 
-    {{!-- This variable is used to make the search form work --}}
-    <script>
-      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
-      const ghostHost = "{{@site.url}}"
+  {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+  {{ghost_head}}
+
+  {{!-- This variable is used to make the search form work --}}
+  <script>
+    // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+    const ghostHost = "{{@site.url}}"
       // @license-end
-    </script>
-  </head>
-  <body class="{{body_class}}">
-    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-    {{{body}}}
+  </script>
 
-    {{!-- Search form --}}
-    {{> search}}
+  {{!-- This script loads the Google font asynchronously --}}
+  <script>
+    // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+    WebFontConfig = {
+      google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+    };
 
-    {{!-- The footer --}}
-    {{> footer}}
+    (function (d) {
+      var wf = d.createElement('script'), s = d.scripts[0];
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.async = true;
+      s.parentNode.insertBefore(wf, s);
+    })(document);
+      // @license-end
+  </script>
+</head>
 
-    {{!-- Notifications alerts --}}
-    {{> "notifications"}}
+<body class="{{body_class}}">
+  <!-- BEGIN COPY CODEFUND EMBED -->
+  <div id="codefund"></div>
+  <script src="https://app.codefund.io/properties/709/funder.js" async></script>
+  <!-- END COPY CODEFUND EMBED -->
+  {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+  {{{body}}}
 
-    {{!-- Common scripts shared between pages --}}
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
-    <script defer src="{{asset "js/manifest.js"}}"></script>
-    <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
-    <script defer src="{{asset "js/vendor.js"}}"></script>
-    <script defer src="{{asset "js/app.js"}}"></script>
+  {{!-- Search form --}}
+  {{> search}}
 
-    {{!-- The #block helper will pull in data from the #contentFor other template files --}}
-    {{{block "scripts"}}}
+  {{!-- The footer --}}
+  {{> footer}}
 
-    {{!-- Ghost outputs important scripts and data with this tag --}}
-    {{ghost_foot}}
-  </body>
+  {{!-- Notifications alerts --}}
+  {{> "notifications"}}
+
+  {{!-- Common scripts shared between pages --}}
+  <script crossorigin="anonymous"
+    src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+  <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
+  <script defer src="{{asset "js/manifest.js"}}"></script>
+  <script defer src="{{asset "js/vendor.js"}}"></script>
+  <script defer src="{{asset "js/app.js"}}"></script>
+
+  {{!-- Scripts for Members subscription --}}
+  <script>
+    // Parse the URL parameter
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Give the parameter a variable name
+    var action = getParameterByName('action');
+    var stripe = getParameterByName('stripe');
+
+    $(document).ready(function () {
+      if (action == 'subscribe') {
+        $('body').addClass("subscribe-success");
+      }
+      if (action == 'signup') {
+        window.location = '{{@site.url}}/signup/?action=checkout';
+      }
+      if (action == 'checkout') {
+        $('body').addClass("signup-success");
+      }
+      if (action == 'signin') {
+        $('body').addClass("signin-success");
+      }
+      if (stripe == 'success') {
+        $('body').addClass("checkout-success");
+      }
+      if (stripe == 'billing-update-success') {
+        $('body').addClass("billing-success");
+      }
+      if (stripe == 'billing-update-cancel') {
+        $('body').addClass("billing-cancel");
+      }
+
+      $('.notification-close').click(function () {
+        $(this).parent().addClass('closed');
+        var uri = window.location.toString();
+        if (uri.indexOf("?") > 0) {
+          var clean_uri = uri.substring(0, uri.indexOf("?"));
+          window.history.replaceState({}, document.title, clean_uri);
+        }
+      });
+
+      // Reset form on opening subscrion overlay
+      $('.subscribe-button').click(function () {
+        $('.subscribe-overlay form').removeClass();
+        $('.subscribe-email').val('');
+      });
+
+      // Account navigation menu
+      $('.account-menu-avatar').click(function (event) {
+        $(this).toggleClass('active');
+        event.stopPropagation();
+      });
+
+      $('.account-menu-dropdown').click(function (event) {
+        event.stopPropagation();
+      });
+
+      $('body').click(function () {
+        $('.account-menu-avatar').removeClass('active');
+      });
+    });
+  </script>
+
+  {{!-- The #block helper will pull in data from the #contentFor other template files --}}
+  {{{block "scripts"}}}
+
+  {{!-- Ghost outputs important scripts and data with this tag --}}
+  {{ghost_foot}}
+</body>
+
 </html>

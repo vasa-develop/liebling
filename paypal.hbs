@@ -1,0 +1,38 @@
+{{!< default}}
+
+{{!-- <header class="site-header">
+    {{> site-header}}
+</header> --}}
+<main id="site-main" class="site-main site-signup outer">
+    <div class="inner">
+        <center>
+            <h3>Choose your subscription</h3>
+            <p>Unlock full access to {{@site.title}} and see the entire library of members-only content & updates</p>
+            <br />
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="DCQZJ25FJDRZU">
+                <table>
+                    <tr>
+                        <td><input type="hidden" name="on0" value=""></td>
+                    </tr>
+                    <tr>
+                        <td><select name="os0">
+                                <option value="SimpleAsWater Monlthy Subscription">SimpleAsWater Monlthy Subscription :
+                                    $5.00 USD -
+                                    monthly</option>
+                                <option value="SimpleAsWater Yearly Subscription">SimpleAsWater Yearly Subscription :
+                                    $50.00
+                                    USD -
+                                    yearly</option>
+                            </select> </td>
+                    </tr>
+                </table>
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_subscribeCC_LG.gif" border="0"
+                    name="submit" alt="PayPal – The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </center>
+    </div>
+</main>

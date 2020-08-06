@@ -1,16 +1,11 @@
 routes:
-  /signup/:
-    template: members/signup
-    data: page.signup
-  /signin/:
-    template: members/signin
-    data: page.signin
-  /membership/:
-    template: members/membership
-    data: page.membership
-  /account/:
-    template: members/account
-    data: page.account
+  /signup/: signup
+  /signin/: signin
+  /subscribe/: subscribe
+  /account/: account
+  /membership/: membership
+  /newsletter/: page-newsletter
+  /paypal/: paypal
 
 collections:
   /:

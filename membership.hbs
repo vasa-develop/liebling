@@ -1,0 +1,60 @@
+{{!< default}}
+
+{{!-- <header class="site-header">
+    {{> site-header}}
+</header> --}}
+<main id="site-main" class="site-main site-signup outer">
+    <div class="inner">
+
+        {{!-- Logged in, not paying: Check out --}}
+        <div class="checkout-form">
+            <h3 class="checkout-title">Choose your subscription</h3>
+            <p>Unlock full access to {{@site.title}} and see the entire library of members-only content & updates</p>
+            <div class="checkout-box">
+                <div class="checkout-plan">
+                    <header class="checkout-plan-header">
+                        <h3>Monthly</h3>
+                        <span>{{@price.currency_symbol}}</span><strong>{{@price.monthly}}</strong> / month
+                    </header>
+                    <div class="checkout-plan-content">
+                        <ul>
+                            <li>14 Day Trial</li>
+                            <li>Access to Internships, Job Offers</li>
+                            <li>Access to Grants, Bounties</li>
+                            <li>Access to Private Q/A in Discord</li>
+                            <li>Request what posts you want next</li>
+                            <li>Full access to all private posts</li>
+                            <li>Regular updates with new content</li>
+                            <li>Support independent publishing</li>
+                            <li>Simple, secure card payment</li>
+                        </ul>
+                        <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choose this
+                            plan</a>
+                    </div>
+                </div>
+                <div class="checkout-plan">
+                    <header class="checkout-plan-header">
+                        <h3>Yearly</h3>
+                        <span>{{@price.currency_symbol}}</span><strong>{{@price.yearly}}</strong> / year
+                    </header>
+                    <div class="checkout-plan-content">
+                        <ul>
+                            <li>14 Day Trial</li>
+                            <li>Access to Internships, Job Offers</li>
+                            <li>Access to Grants, Bounties</li>
+                            <li>Access to Private Q/A in Discord</li>
+                            <li>Request what posts you want next</li>
+                            <li>Full access to all private posts</li>
+                            <li>Regular updates with new content</li>
+                            <li>Support independent publishing</li>
+                            <li>Simple, secure card payment</li>
+                            <li>One easy payment instead of 12!</li>
+                        </ul>
+                        <a class="button primary fit" href="javascript:" data-members-plan="Yearly">Choose this plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
